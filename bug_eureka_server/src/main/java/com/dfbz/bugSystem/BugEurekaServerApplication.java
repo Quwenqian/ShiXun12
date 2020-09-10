@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /***
- * 发送大附件卡了
+ * 发送大附
  */
 @SpringBootApplication
 @EnableEurekaServer
