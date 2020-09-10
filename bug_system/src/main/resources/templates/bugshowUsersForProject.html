@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理页面</title>
+    <style>
+        .odd{
+            color:darkred;
+        }
+        .even{
+
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li th:each="u,iter:${data}" th:class="${iter.odd}? odd : even">
+            <span th:text="'用户名：'+${u.userName}"></span>
+            <span th:text="${u.updateDate}"></span>
+
+        </li>
+    </ul>
+
+</body>
+</html>

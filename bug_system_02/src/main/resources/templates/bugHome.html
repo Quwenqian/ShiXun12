@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>系统首页</title>
+</head>
+<body>
+<div>
+    <h3>timeline的bug信息</h3>
+
+    <ul>
+        <li th:each="tl,iter:${timelines}">
+            <span th:text="'问题ID:'+${tl.problemId}"></span>
+            <div>
+                <span th:text="${tl.projectId}"></span>
+                <span th:text="${tl.teamId}"></span>
+            </div>
+            <p th:text="${#dates.format(tl.timelineDate,'yyyy-MM-dd HH:mm')}"></p>
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>

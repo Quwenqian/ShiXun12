@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户数据列表</title>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>用户名</th>
+            <th>角色</th>
+            <th>操作</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="u,iter:${userList}">
+            <td th:text="${iter.index}"></td>
+            <td th:text="${u.userName}"></td>
+            <td th:text="${u.role.roleName}"></td>
+            <td><a href="javascript:void(0)"
+                   th:onclick="'javascript:changeModule(\''+${u.userId}+'\',\''+${u.role.roleId}+'\');'">更改权限</a></td>
+
+        </tr>
+    </tbody>
+</table>
+
+</body>
+<script>
+    var ctx = [[@{/}]];
+    function changeModule(userId,roleId){
+        window.location = ctx+"user/showModules?userId="+userId+"&roleId="+roleId;
+    }
+</script>
+</html>

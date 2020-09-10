@@ -1,0 +1,11 @@
+server:
+  port: 8091
+  servlet:
+    context-path: /bug
+spring:
+  application:
+    name: bug-system-project
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8716/eureka/

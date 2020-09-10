@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body>
+<span ></span>
+<form method="post">
+    <input type="text" name="userName" ><br />
+    <input type="password" name="password" ><br />
+    <input type="checkbox" name="rememberMe">记住我<br />
+    <button type="button" onclick="login()">登录</button>
+</form>
+
+
+
+</body>
+<script type="text/javascript">
+    var ctx = [[@{/}]];
+    function login(){
+
+        var userName = $("input[name='userName']").val();
+        var password = $("input[name='password']").val();
+        var rememberMe = $("input[name='rememberMe']").is(":checked");
+        $.ajax({
+            url:ctx+"user/doLogin",
+            type:"post",
+            data:{'userName':userName,"password":password,"rememberMe":rememberMe},
+            dataType:"text",
+            success:function(d){
+                alert(d);
+            }
+        });
+
+    }
+
+</script>
+
+</html>

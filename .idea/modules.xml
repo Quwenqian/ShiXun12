@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bug_eureka_server/bug_eureka_server.iml" filepath="$PROJECT_DIR$/bug_eureka_server/bug_eureka_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bug_ribbon_customer/bug_ribbon_customer.iml" filepath="$PROJECT_DIR$/bug_ribbon_customer/bug_ribbon_customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bug_system/bug_system.iml" filepath="$PROJECT_DIR$/bug_system/bug_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bug_system_02/bug_system_02.iml" filepath="$PROJECT_DIR$/bug_system_02/bug_system_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bug_system_porject/bug_system_porject.iml" filepath="$PROJECT_DIR$/bug_system_porject/bug_system_porject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bug_system_porject_02/bug_system_porject_02.iml" filepath="$PROJECT_DIR$/bug_system_porject_02/bug_system_porject_02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bug_zuul_service/bug_zuul_service.iml" filepath="$PROJECT_DIR$/bug_zuul_service/bug_zuul_service.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户权限</title>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+
+</head>
+<body>
+
+
+
+<div th:each="moduleVo:${modules}" >
+    <input type="checkbox" th:checked="${moduleVo.flag}"
+           name="modulesId" th:value="${moduleVo.moduleId}" />
+    <label th:text="${moduleVo.moduleName}"></label>
+</div>
+
+<input type="button" onclick="changeModules()"  value="提交">
+</body>
+<script>
+    var ctx=[[@{/}]];
+    function  changeModules() {
+        var ids =[];//用来存放所有选中了的module的集合
+        $("input[name=modulesId]:checked").each(function () {
+            ids.push($(this).val());
+        });
+        var userId = [[${userId}]];
+        var roleId = [[${roleId}]];
+
+        $.ajax({
+            url:ctx+"user/changeUserModules",
+            type:"post",
+            data:{userId:userId,roleId:roleId,moduleIds:ids},
+            dataType:"json",
+            success:function(data){
+                alert(data.message);
+            }
+
+        });
+
+    }
+    
+</script>
+</html>

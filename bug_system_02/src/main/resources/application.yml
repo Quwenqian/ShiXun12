@@ -1,0 +1,41 @@
+# 服务注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8716/eureka/
+
+
+#服务器配置
+server:
+  port: 8082
+  servlet:
+    context-path: /bug
+#项目配置
+spring:
+  application:
+    name: bug-system-user
+  master:
+    datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3308/db_bugsystem?serverTimezone=GMT&useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000
+    password: 123456
+  druid:
+    initial-size: 5
+    max-active: 20
+    max-wait: 10
+    min-idle: 20
+    filters: stat,wall
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 2000
+  main:
+    allow-bean-definition-overriding: true
+
